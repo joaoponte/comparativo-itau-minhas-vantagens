@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joaoponte.github.io/comparativo-itau-minhas-vantagens/sitemap.xml
