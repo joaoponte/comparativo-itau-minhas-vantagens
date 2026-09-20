@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@keyframes levelUpFade {
+  0%   { background-color: var(--levelup-from, #fef9c3); }
+  100% { background-color: transparent; }
+}
+
+.levelup-fade {
+  animation: levelUpFade 1.2s ease-out 1;
+}
+
+/* Hide spinners on number inputs (for any future number fields). */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ─────────────── Print / Save as PDF ─────────────── */
+
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  content: '';
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  /* Force a light palette regardless of system dark mode. */
+  :root { color-scheme: light !important; }
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* ── Kill every list marker (bullets, numbers, summary markers) ── */
+  ul, ol, li, summary, details {
+    list-style: none !important;
+  }
+  summary { display: block !important; }
+  summary::marker,
+  summary::-webkit-details-marker,
+  li::marker,
+  li::-webkit-details-marker {
+    display: none !important;
+    content: '' !important;
+  }
+
+  /* ── Reveal both segment cards regardless of active mobile tab ── */
+  .segment-card {
+    display: flex !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+  }
+
+  /* ── Page structure ──
+     Products → page 1. Each segment card → its own page. */
+  .print-comparison {
+    break-before: page;
+    page-break-before: always;
+  }
+  .segment-card + .segment-card {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Hide the on-screen "Comparação" heading: the print header already
+     summarizes both segments, so this heading would just orphan on a page. */
+  .print-hide-heading {
+    display: none !important;
+  }
+
+  /* Keep headings attached to what follows them. */
+  h1, h2, h3, h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Avoid splitting small blocks across pages. */
+  article, details, ul, section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Neutralize buttons' native look. */
+  button {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    text-align: left !important;
+    cursor: default !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: underline;
+  }
+}
