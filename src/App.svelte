@@ -26,6 +26,7 @@
     encode
   } from './lib/persistence'
   import MoneyInput from './lib/MoneyInput.svelte'
+  import ProgramInfo from './lib/ProgramInfo.svelte'
   import { onDestroy } from 'svelte'
 
   let items: ProductState[] = $state(products.map(toState))
@@ -550,32 +551,36 @@
   </section>
 
   <footer class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-400 dark:text-slate-500">
-    <p class="mb-2">
-      Informações baseadas nas páginas oficiais do Itaú. O PDF com os detalhes
-      completos está disponível no final de cada página.
-    </p>
-    <ul class="flex flex-col sm:flex-row gap-x-6 gap-y-1">
-      <li>
-        <a
-          href="https://www.itau.com.br/uniclass/minhas-vantagens"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-slate-600 dark:hover:text-slate-300 underline underline-offset-2"
-        >
-          Uniclass — Minhas Vantagens ↗
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.itau.com.br/personnalite/minhas-vantagens"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-slate-600 dark:hover:text-slate-300 underline underline-offset-2"
-        >
-          Personnalité — Minhas Vantagens ↗
-        </a>
-      </li>
-    </ul>
+    <ProgramInfo />
+
+    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+      <p class="mb-2">
+        Informações baseadas nas páginas oficiais do Itaú. O PDF com os detalhes
+        completos está disponível no final de cada página.
+      </p>
+      <ul class="flex flex-col sm:flex-row gap-x-6 gap-y-1">
+        <li>
+          <a
+            href="https://www.itau.com.br/uniclass/minhas-vantagens"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-slate-600 dark:hover:text-slate-300 underline underline-offset-2"
+          >
+            Uniclass — Minhas Vantagens ↗
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.itau.com.br/personnalite/minhas-vantagens"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-slate-600 dark:hover:text-slate-300 underline underline-offset-2"
+          >
+            Personnalité — Minhas Vantagens ↗
+          </a>
+        </li>
+      </ul>
+    </div>
   </footer>
 </main>
 

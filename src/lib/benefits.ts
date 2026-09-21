@@ -267,7 +267,7 @@ export const uniclassBenefits: Benefit[] = [
   },
   {
     family: 'cupom-escolha',
-    label: 'Escolha um cupom da lista',
+    label: 'Direito a um cupom da lista',
     minLevel: 4,
     maxLevel: 4,
     category: 'cupom',
@@ -312,7 +312,7 @@ export const uniclassBenefits: Benefit[] = [
   // ───────────── Level 5 ─────────────
   {
     family: 'cupom-escolha',
-    label: 'Escolha um cupom da lista',
+    label: 'Direito a um cupom da lista',
     minLevel: 5,
     category: 'cupom',
     brands: ['netflix', 'itau', 'uber', 'itau-shop', 'shellbox', 'outback', 'mcdonalds'],
@@ -446,7 +446,7 @@ export const personnaliteBenefits: Benefit[] = [
   // ───────────── Level 3 ─────────────
   {
     family: 'cupom-escolha',
-    label: 'Escolha um benefício da lista',
+    label: 'Direito a um benefício da lista',
     minLevel: 3,
     maxLevel: 3,
     category: 'cupom',
@@ -483,7 +483,7 @@ export const personnaliteBenefits: Benefit[] = [
   },
   {
     family: 'cupom-escolha',
-    label: 'Escolha um benefício da lista',
+    label: 'Direito a um benefício da lista',
     minLevel: 4,
     maxLevel: 4,
     category: 'cupom',
@@ -525,7 +525,7 @@ export const personnaliteBenefits: Benefit[] = [
   },
   {
     family: 'cupom-escolha',
-    label: 'Escolha um benefício da lista',
+    label: 'Direito a um benefício da lista',
     minLevel: 5,
     category: 'cupom',
     brands: ['lacoste', 'grand-cru', 'uber'],
